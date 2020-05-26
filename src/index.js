@@ -12,15 +12,20 @@ class ContributorInsights {
   generate(){
     const template = this.serverless.service.provider.compiledCloudFormationTemplate;
     this.config.forEach( function(element){
-      template.Resources[element.ruleId] = {
+      const ruleId = ( element.hasOwnProperty('ruleId'))? element.ruleId : this.provider.naming.normalizeNameToAlphaNumericOnly(element.ruleName);
+      template.Resources[ruleId] = {
         Type:'AWS::CloudWatch::InsightRule',
         Properties:{
           RuleBody: element.ruleBody,
           RuleName: element.ruleName,
-          RuleState: element.ruleState,
-          Tags: element.tags
+          RuleState: element.ruleState
         }
-      }});
+      }
+      if (element.hasOwnProperty('tags')){
+        template.Resources[ruleId].Properties.Tags = element.tags;
+      }
+    },this);
   }
 }
 module.exports = ContributorInsights;
+

@@ -10,11 +10,11 @@ plugins:
 
 custom:
   contributor-insights:
-    - ruleBody: "{\"Schema\":{\"Name\":\"CloudWatchLogRule\",\"Version\":1},\"AggregateOn\":\"Count\",\"Contribution\":{\"Filters\":[{\"Match\":\"$.status\",\"GreaterThan\":500}],\"Keys\":[\"$.path\",\"$.status\"]},\"LogFormat\":\"JSON\",\"LogGroupNames\":[\"\/aws\/apigateway\/*\"]}"
-      ruleName: rule-1
-      ruleId: ruleid1
-      ruleState: ENABLED
-      tags:
+    - ruleBody: "{\"Schema\":{\"Name\":\"CloudWatchLogRule\",\"Version\":1},\"AggregateOn\":\"Count\",\"Contribution\":{\"Filters\":[{\"Match\":\"$.status\",\"GreaterThan\":500}],\"Keys\":[\"$.path\",\"$.status\"]},\"LogFormat\":\"JSON\",\"LogGroupNames\":[\"\/aws\/apigateway\/*\"]}" #REQUIRED
+      ruleName: rule-1 #REQUIRED
+      ruleId: ruleid1 #OPTIONAL
+      ruleState: ENABLED #REQUIRED
+      tags: #OPTIONAL
         - Key: key1
           Value: value1
         - Key: Key2
