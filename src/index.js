@@ -12,6 +12,9 @@ class ContributorInsights {
   generate(){
     const template = this.serverless.service.provider.compiledCloudFormationTemplate;
     this.config.forEach( function(element){
+      if (typeof element.ruleBody ==='object'){
+        element.ruleBody = JSON.stringify(element.ruleBody).replace(/"/g,"\"");
+      }
       const ruleId = ( element.hasOwnProperty('ruleId'))? element.ruleId : this.provider.naming.normalizeNameToAlphaNumericOnly(element.ruleName);
       template.Resources[ruleId] = {
         Type:'AWS::CloudWatch::InsightRule',
@@ -28,4 +31,3 @@ class ContributorInsights {
   }
 }
 module.exports = ContributorInsights;
-

@@ -1,6 +1,6 @@
 {
   "name": "serverless-plugin-aws-contributor-insights",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "a serverless framework plug to generate AWS::CloudWatch::InsightRule",
   "main": "src",
   "scripts": {
