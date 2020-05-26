@@ -19,8 +19,7 @@ custom:
           Value: value1
         - Key: Key2
           Value: value2
-          #- rule2:
-    - ruleBody: "{\"Schema\":{\"Name\":\"CloudWatchLogRule\",\"Version\":1},\"AggregateOn\":\"Count\",\"Contribution\":{\"Filters\":[{\"Match\":\"$.status\",\"GreaterThan\":500}],\"Keys\":[\"$.path\",\"$.status\"]},\"LogFormat\":\"JSON\",\"LogGroupNames\":[\"\/aws\/apigateway\/*\"]}"
+    - ruleBody: "{\"Schema\":{\"Name\":\"CloudWatchLogRule\",\"Version\":1},\"AggregateOn\":\"Count\",\"Contribution\":{\"Filters\":[{\"Match\":\"$.status\",\"GreaterThan\":500}],\"Keys\":[\"$.path\",\"$.status\"]},\"LogFormat\":\"JSON\",\"LogGroupNames\":[\"\/aws\/api-gateway\/*\"]}"
       ruleName: rule-2
       ruleId: ruleid2
       ruleState: ENABLED
