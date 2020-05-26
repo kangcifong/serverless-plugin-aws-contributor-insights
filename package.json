@@ -1,0 +1,25 @@
+{
+  "name": "serverless-plugin-aws-contributor-insights",
+  "version": "1.0.0",
+  "description": "a serverless framework plug to generate AWS::CloudWatch::InsightRule",
+  "main": "src",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kangcifong/serverless-plugin-aws-contributor-insights.git"
+  },
+  "keywords": [
+    "aws",
+    "serverless",
+    "cloudwatch",
+    "Contributor insights"
+  ],
+  "author": "Kang Cifong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kangcifong/serverless-plugin-aws-contributor-insights/issues"
+  },
+  "homepage": "https://github.com/kangcifong/serverless-plugin-aws-contributor-insights#readme"
+}
